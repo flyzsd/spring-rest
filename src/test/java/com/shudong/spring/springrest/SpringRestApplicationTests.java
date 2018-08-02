@@ -10,11 +10,11 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @ActiveProfiles("test")
-public class SpringRestApplicationTests {
+class SpringRestApplicationTests {
 
-	@Test
+    @Test
     @DisplayName("contextLoads")
-	public void contextLoads() {
-	}
+    void contextLoads() {
+    }
 
 }
