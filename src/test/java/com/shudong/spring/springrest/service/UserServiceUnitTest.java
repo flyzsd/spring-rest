@@ -27,7 +27,7 @@ import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 @Slf4j
-class UserServiceTest {
+class UserServiceUnitTest {
     @InjectMocks
     private UserService userService;
 
