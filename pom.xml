@@ -114,12 +114,14 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
+            <version>5.2.0</version>
             <scope>test</scope>
         </dependency>
         <!-- and the engine for surefire and failsafe -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.2.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -131,6 +133,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
+            <version>3.10.0</version>
             <scope>test</scope>
         </dependency>
 	</dependencies>
