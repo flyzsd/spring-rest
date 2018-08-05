@@ -1,6 +1,9 @@
 package com.shudong.spring.springrest.repository;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -10,6 +13,9 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "USER")
 @Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserEntity {
     @Id
     @GeneratedValue(generator = "uuid")
