@@ -1,4 +1,4 @@
-package com.shudong.spring.springrest.entity;
+package com.shudong.spring.springrest.repository;
 
 import lombok.Getter;
 import org.hibernate.annotations.GenericGenerator;
