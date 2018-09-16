@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.sql.Timestamp;
@@ -18,6 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+@ActiveProfiles("test")
 public class UserServiceIntegrationTest {
     @Autowired
     private UserService userService;
@@ -30,6 +32,10 @@ public class UserServiceIntegrationTest {
     class UserFound {
         @BeforeEach
         void setup() {
+        }
+
+        @Test
+        void testGetUser() {
             UserEntity userEntity = UserEntity.builder()
                     .name("shudong")
                     .email("shudong@mail.com")
@@ -37,11 +43,8 @@ public class UserServiceIntegrationTest {
                     .modifiedOn(Timestamp.from(Instant.now()))
                     .build();
             UserEntity dbUserEntity = userRepo.saveAndFlush(userEntity);
-        }
 
-        @Test
-        void testGetUser() {
-            Optional<User> optionalUser = userService.getUser("12344");
+            Optional<User> optionalUser = userService.getUser(dbUserEntity.getId());
             assertThat(optionalUser.isPresent()).isTrue();
         }
     }
