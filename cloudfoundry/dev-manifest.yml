@@ -1,0 +1,13 @@
+---
+applications:
+- name: spring-rest
+  memory: 1024M
+  disk_quota: 1G
+  timeout: 180
+  instances: 1
+  buildpack: java_buildpack
+  path: ./../target/spring-rest.jar
+  env:
+    SPRING_APPLICATION_NAME: spring-rest
+  services:
+    - jdbc/mysql/testdb
