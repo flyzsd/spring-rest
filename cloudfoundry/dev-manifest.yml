@@ -19,4 +19,4 @@ applications:
   - route: shudong.cfapps.io
   - route: spring-rest.cfapps.io
   health-check-type: http
-  health-check-http-endpoint: /health
+  health-check-http-endpoint: /actuator/health
