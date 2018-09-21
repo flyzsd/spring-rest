@@ -12,6 +12,7 @@ applications:
   env:
     TZ: Asia/Singapore
     SPRING_APPLICATION_NAME: spring-rest
+    SPRING_PROFILES_ACTIVE: dev
   services:
     - jdbc/mysql/testdb
     - my-cf-scheduler
