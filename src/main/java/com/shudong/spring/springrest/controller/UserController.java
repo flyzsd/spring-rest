@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -16,6 +17,11 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @RequestMapping("/")
+    public Principal user(Principal principal) {
+        return principal;
+    }
 
     @GetMapping(path = "/{id}")
     public GetUserResponse getUser(@PathVariable String id) {
