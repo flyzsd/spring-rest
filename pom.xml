@@ -76,7 +76,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-json</artifactId>
+			<artifactId>spring-boot-starter-json</artifactId>	<!-- jackson-databind, jackson-datatype-jdk8, jackson-datatype-jsr310, jackson-module-parameter-names -->
 		</dependency>
 		<dependency>
 			<groupId>org.flywaydb</groupId>
