@@ -27,7 +27,6 @@ public class UserServiceIntegrationTest {
     @Autowired
     private UserEntity.Repo userRepo;
 
-
     @Nested
     class UserFound {
         @BeforeEach

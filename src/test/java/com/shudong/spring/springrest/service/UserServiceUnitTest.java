@@ -3,10 +3,7 @@ package com.shudong.spring.springrest.service;
 import com.shudong.spring.springrest.repository.UserEntity;
 import com.shudong.spring.springrest.service.model.User;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -25,6 +22,7 @@ import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
+@DisplayName("UserServiceUnitTest in Spring boot 2")
 @ExtendWith(MockitoExtension.class)
 @Slf4j
 class UserServiceUnitTest {
@@ -73,6 +71,7 @@ class UserServiceUnitTest {
             verify(userRepo, times(1)).findById(assertArg(e -> assertThat(e).isEqualTo(id)));
         }
 
+        @DisplayName("shouldThrowException - test with exception")
         @Test
         void shouldThrowException() {
             String id = "xyz-abc";

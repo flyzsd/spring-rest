@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 import java.util.Arrays;
 
@@ -16,7 +15,7 @@ import java.util.Arrays;
 @EnableJpaRepositories(considerNestedRepositories = true)
 @EnableFeignClients
 @SpringBootApplication
-public class SpringRestApplication extends WebSecurityConfigurerAdapter {
+public class SpringRestApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringRestApplication.class, args);
