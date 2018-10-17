@@ -20,14 +20,14 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
-            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and()
             .authorizeRequests()
             .antMatchers("/admin/**").access("hasRole('ADMIN')")
             .antMatchers("/api/**").authenticated()
             .antMatchers("/actuator/**").authenticated()
 //            .anyRequest().authenticated()
             .and()
-            .exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler());
+            .exceptionHandling().accessDeniedHandler(new OAuth2AccessDeniedHandler())
+            .and()
+            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 }
