@@ -68,6 +68,7 @@ class UserServiceUnitTest {
             assertThat(optionalUser).isNotNull();
             assertThat(optionalUser.isPresent()).isFalse();
             //Argument Captor
+            verify(userRepo).findById(assertArg(e -> assertThat(e).isEqualTo(id)));
             verify(userRepo, times(1)).findById(assertArg(e -> assertThat(e).isEqualTo(id)));
         }
 
