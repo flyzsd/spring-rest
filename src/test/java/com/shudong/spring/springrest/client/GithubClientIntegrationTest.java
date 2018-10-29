@@ -1,5 +1,6 @@
 package com.shudong.spring.springrest.client;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -22,5 +23,11 @@ public class GithubClientIntegrationTest {
     void testGetContributors() {
         List<GithubClient.Contributor> contributors = githubClient.contributors("flyzsd", "spring-rest", "xyz-token", "123456789");
         System.out.println(contributors);
+    }
+
+    @Disabled
+    @Test()
+    @DisplayName("disabled test")
+    void shouldNotRunDisabledTest() {
     }
 }
