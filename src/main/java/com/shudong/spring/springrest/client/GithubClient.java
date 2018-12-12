@@ -3,10 +3,7 @@ package com.shudong.spring.springrest.client;
 import lombok.Getter;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,4 +20,7 @@ public interface GithubClient {
 
     @RequestMapping(method = GET, value = "/repos/{owner}/{repo}/contributors", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     List<Contributor> contributors(@PathVariable("owner") String owner, @PathVariable("repo") String repo, @RequestHeader("X-Auth-Token") String token, @RequestParam(name = "queryId", required = false, defaultValue = "abc") String queryId);
+
+    @GetMapping(value = "/repos/{owner}/{repo}/contributors", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    List<Contributor> contributors2(@PathVariable("owner") String owner, @PathVariable("repo") String repo, @RequestHeader("X-Auth-Token") String token, @RequestParam(name = "queryId", required = false, defaultValue = "abc") String queryId);
 }
